@@ -13,3 +13,6 @@ You can find this awesome game <a href="http://handelslei.be/squaretap" target="
 3. Open [script.min.js](dist/script.min.js) or [script.js](script.js) and copy its contents.
 3. Paste the copied code into the *console*-tab of the developer tools.
 5. Profit.
+
+#Turn down your volume!#
+Ears will blead if you don't. Trust me.
