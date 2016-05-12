@@ -33,7 +33,9 @@
             }
             // Last square. Reset the flow & launch again.
             if (i === 8) {
-                reset();
+                setTimeout(function () {
+                    reset();
+                }, 2);
             }
         }
     }
@@ -44,8 +46,6 @@
     }
 
     function reset() {
-
-        setTimeout(function () {
 
             solutionGrid = d.qs('#solutionGrid')[0];
             score = d.qs('#score')[0].innerHTML;
@@ -62,8 +62,6 @@
                 window.clearInterval(window.time);
                 showEndGame();
             }
-
-        }, 1);
 
     }
 
