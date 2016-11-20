@@ -19,7 +19,7 @@
     /////// Functions
     function extractSolutionValues() {
         for (var i = 0; i < solutionGrid.children.length; i += 1) {
-            solutionArr.push(parseInt(solutionGrid.children[i].attributes[2].value));
+            solutionArr.push(parseInt(solutionGrid.children[i].attributes[2].value, 10));
         }
 
         // Let's click all the right squares.
@@ -47,21 +47,21 @@
 
     function reset() {
 
-            solutionGrid = d.qs('#solutionGrid')[0];
-            score = d.qs('#score')[0].innerHTML;
-            level += 1;
-            solutionArr = [];
+        solutionGrid = d.qs('#solutionGrid')[0];
+        score = d.qs('#score')[0].innerHTML;
+        level += 1;
+        solutionArr = [];
 
-            // Do we still have time left?
-            if (parseInt(timer.innerHTML) > 0) {
-                // Start all over again.
-                extractSolutionValues();
-            } else {
-                // Ouch, that's a negative timer. Just end the game.
-                timer.innerHTML = "Time's up!";
-                window.clearInterval(window.time);
-                showEndGame();
-            }
+        // Do we still have time left?
+        if (parseInt(timer.innerHTML, 10) > 0) {
+            // Start all over again.
+            extractSolutionValues();
+        } else {
+            // Ouch, that's a negative timer. Just end the game.
+            timer.innerHTML = "Time's up!";
+            window.clearInterval(window.time);
+            showEndGame();
+        }
 
     }
 
